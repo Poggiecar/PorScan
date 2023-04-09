@@ -3,19 +3,6 @@
 import nmap
 
 
-print("  (^^^^^^^^^^^)")
-print("  ( -o-   -o- )")
-print("  (     J     )")
-print("  (   /---/   )")
-print("  (    ⏝⏝    )")
-
-print("     ")
-print("     ")
-
-
-
-
-
 
 print("  [] Herramienta para escanear puertos abiertos en una direccion IP")
 print("  [] Escrita en Python con Sublime, utiliza Nmap")
@@ -43,7 +30,9 @@ for proto in nm[ip].all_protocols():
             puertos_abiertos= puertos_abiertos + "," + str(port)
 
 print("Puertos abiertos: "+puertos_abiertos+ " " + str(ip)) 	
-print("Escaneo con Scripts y versiones: nmap -sC -sV "+puertos_abiertos + " " + str(ip) + " -oN "+ str(nombre_escaneo)+".txt")		
+print("Escaneo con Scripts y versiones: nmap -sC -sV "+puertos_abiertos + " " + str(ip) + " -oN "+ str(nombre_escaneo)+".txt")
+print("Escaneo sigiloso sin ping y fragmentacion de paquetes: nmap -T3 -Pn -f " + puertos_abiertos + "" + str(ip) + "-oN" + str(nombre_escaneo)+".txt")
+print("Para mas informacion sobre la herramienta visita https://nmap.org/book/man.html")
 
 
 
